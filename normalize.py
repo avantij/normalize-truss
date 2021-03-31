@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3
 import numpy as np 
 import math
 import pandas as pd

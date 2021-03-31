@@ -1,7 +1,6 @@
 import unittest
 import pandas as pd
 from normalize import NormalizeCSV
-from pandas._testing import assert_frame_equal
 
 class TestNormalize(unittest.TestCase):
 
