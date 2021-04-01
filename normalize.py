@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import numpy as np 
-import math
-import pandas as pd
 from datetime import datetime
+import numpy as np 
+import pandas as pd
 import pytz 
 import sys
 
@@ -57,7 +56,12 @@ class NormalizeCSV:
         self.data["TotalDuration"] = foo_bar_sum
 
     def read_csv(self):
-        self.data = pd.read_csv(self.stdin_file, encoding='utf-8')
+        try:
+            self.data = pd.read_csv(self.stdin_file, encoding='utf-8')
+        except UnicodeDecodeError:
+            sys.tracebacklimit = 0
+            sys.stderr.write("csv contains invalid unicode characters. please provide valid unicode file to use normalizer - handling non utf encoding is not yet implemented :) \n")
+            sys.exit(1)
 
     def write_csv(self):
         self.data.to_csv(sys.stdout, index=False)

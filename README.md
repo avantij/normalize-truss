@@ -8,7 +8,7 @@
 ## Environment
 Run following commands to setup environment
 ```
-python3 venv -m virtualenv
+python3 -m venv virtualenv
 source virtualenv/bin/activate
 pip install -r requirements.txt
 ```
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ## Running Normalizer
 
 ```
-python3 run_normalize.py <input_data.csv> output_data.csv
+python3 run_normalizer.py < input_data.csv > output_data.csv
 ```
 
 ## Tests
